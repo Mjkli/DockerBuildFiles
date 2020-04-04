@@ -1,0 +1,78 @@
+
+
+//Start a container from an image
+//If image is not on host it will pull image from docker
+docker run nginx
+
+
+
+//List containers with basic info
+
+//shows running containers
+docker ps 
+
+//shows all containers
+docker ps -a
+
+
+//Stop a container
+
+docker stop "container name"
+
+
+//remove container
+
+docker rm "container name"
+
+
+//show list of available images
+
+docker images
+
+//remove image
+//Make sure to stop and remove all containers before removing image
+
+docker rmi "image name"
+
+
+//to grab an image without running a container
+
+docker pull "image name"
+
+
+//append a command
+//The new instance will sleep for 5 seconds
+//This will run the command when the instance is created
+
+original:
+
+docker run ubuntu
+
+new:
+
+docker run ubuntu sleep 5
+
+
+
+//Executing a command to a running container
+
+docker exec "container name" "Command"
+
+docker exec docker_name cat /etc/hosts
+
+
+
+//Attach vs detach
+//Attach means you are dropped into the container
+//Detach means runns in the background - you will be loaded to your main prompt
+
+//attach
+docker run kodekloud/simple-webapp
+
+//detach
+docker run -d kodekloud/simple-webapp
+
+
+
+
+
